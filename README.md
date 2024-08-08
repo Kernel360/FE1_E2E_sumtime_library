@@ -105,6 +105,4 @@ timetable에서 한 task slot을 눌렀을 경우, 해당 slot의 정보가 popo
 ![image](https://github.com/user-attachments/assets/b4b9cdf6-3823-48bf-9d7b-6ebbbdc68859)
 
 
-### 컴포넌트 설계(Anatomy)
-
 
