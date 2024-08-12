@@ -27,25 +27,35 @@ npm install ~~~
 | timetableType | 타입테이블의 타입을 선택합니다.(COLNM, ROW) | COLNM | ROW |  |
 | displayCurrentTime | 현재 시간을 나타냄 여부를 나타낸다. | boolean | false |
 | defaultValue | slot이 어떠한 이슈로 내부 content 작성이 어려울 경우 지정한 defaultValue로 렌더링 됩니다. | string | “” |
-| currentTimeLineStyle | 현재 시간을 나타내는 선의 스타일을 입힙니다. | css |  |
+| currentTimeLineStyle | 현재 시간을 나타내는 선의 스타일을 입힙니다. | css | {} |
+| popoverType | 생략된 task의 content를 어떻게 출력할 지 고른다. | 'CLICK', 'HOVER' | 'CLICK'  |
+| timeTableStyle | 전체 타임테이블의 스타일을 입힙니다. | css | { backgroundColor: 'white' } |
+| timeSlotStyle | 시간을 나타내는 영역의 스타일을 입힙니다. | css | { color: 'black' } |
+| taskSlotStyle | 할일을 나타내는 영역의 스타일을 입힙니다. | css | { color: 'black' }|
 
 
 
 ```tsx
 
-  <Timetable
-     startTime={startTime}
-     endTime={endTime}
-     slotTime={60}
-     taskList={taskListWithouttaskColor}
-     timeTableSize="2000px"
-     timetableType="COLUMN"
-     displayCurrentTime
-     defaultValue="+"
-     currentTimeLineStyle={{ border: 'dashed 1px red' }}
-  />
+        <Timetable // ROW
+          startTime={startTime}
+          endTime={endTime}
+          slotTime={slotTime}
+          taskList={taskList}
+          timeTableSize="2000px"
+          timetableType="ROW"
+          displayCurrentTime
+          timeTableStyle={{ backgroundColor: 'white' }}
+          timeSlotStyle={{ color: 'black' }}
+          taskSlotStyle={{ color: 'black' }}
+          popoverType="HOVER"
+          defaultValue="..."
+        />
 
 ```
+
+
+
 
 <br/>
 
@@ -58,6 +68,17 @@ task(할일) 목록에 시작시간과 끝 시간이 있다면 이는 timetable�
 timetable이 보여질때 사용자는 다양한 속성을 선택 하여 상황에 맞게 사용할 수 있습니다.       
 
 <br/>
+
+### task type
+| name | description | type| default |
+| --- | --- | --- | --- |
+id | task를 식별할 수 있는 고유한 식별자입니다. | number | |
+title | task의 title 입니다. | string | |
+subTitle | task에 대한 추가 설명입니다. | string | |
+taskColor| 타임테이블에서 task의 색입니다. 없다면 무작위적으로 색을 지정합니다. | string or undefined | | 
+| startTime | task가 시작할 시간입니다. | Date| |
+| endTime | task가 종료할 시간입니다. | Date| |
+
 
 ### [task 옵션]
 
@@ -106,6 +127,3 @@ timetable에서 한 task slot을 눌렀을 경우, 해당 slot의 정보가 popo
 
 ```
 ![image](https://github.com/user-attachments/assets/b4b9cdf6-3823-48bf-9d7b-6ebbbdc68859)
-
-
-
