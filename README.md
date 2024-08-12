@@ -32,6 +32,7 @@ npm install ~~~
 | timeTableStyle | 전체 타임테이블의 스타일을 입힙니다. | css | { backgroundColor: 'white' } |
 | timeSlotStyle | 시간을 나타내는 영역의 스타일을 입힙니다. | css | { color: 'black' } |
 | taskSlotStyle | 할일을 나타내는 영역의 스타일을 입힙니다. | css | { color: 'black' }|
+| slotStyle | timeSlot과 taskSlot을 감싸고 있는 영역의 스타일을 입힙니다.| css | {} |
 | taskTheme | random color 지정 시에 task의 theme을 지정할 수 있습니다. |  |random|
 
 
