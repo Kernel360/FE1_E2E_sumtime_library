@@ -32,7 +32,7 @@ npm install ~~~
 | timeTableStyle | 전체 타임테이블의 스타일을 입힙니다. | css | { backgroundColor: 'white' } |
 | timeSlotStyle | 시간을 나타내는 영역의 스타일을 입힙니다. | css | { color: 'black' } |
 | taskSlotStyle | 할일을 나타내는 영역의 스타일을 입힙니다. | css | { color: 'black' }|
-
+| taskTheme | random color 지정 시에 task의 theme을 지정할 수 있습니다. |  |random|
 
 
 ```tsx
@@ -50,6 +50,7 @@ npm install ~~~
           taskSlotStyle={{ color: 'black' }}
           popoverType="HOVER"
           defaultValue="..."
+          taskTheme="random"
         />
 
 ```
@@ -78,6 +79,7 @@ subTitle | task에 대한 추가 설명입니다. | string | |
 taskColor| 타임테이블에서 task의 색입니다. 없다면 무작위적으로 색을 지정합니다. | string or undefined | | 
 | startTime | task가 시작할 시간입니다. | Date| |
 | endTime | task가 종료할 시간입니다. | Date| |
+| seed | taskColor없다면 random color의 바탕이 되는 값입니다. | string or number or undefined | |
 
 
 ### [task 옵션]
