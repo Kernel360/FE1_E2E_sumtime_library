@@ -19,14 +19,14 @@ npm install ~~~
 
 | Prop | Description | type | Default |
 | --- | --- | --- | --- |
-| startTime | 타임 테이블의 시작 시간을 나타냅니다. | Date |  |
-| endTime | 타임 테이블의 종료 시간을 나타냅니다. | Date |  |
-| slotTime | 시간표를 어떤 단위로 표현할 것인지를 나태냅니다. ex. 30(30분), 60(60분) | number |  |
+| totalStartTime | 타임 테이블의 시작 시간을 나타냅니다. | Date |  |
+| totalEndTime | 타임 테이블의 종료 시간을 나타냅니다. | Date |  |
+| slotRange | 시간표를 어떤 단위로 표현할 것인지를 나태냅니다. ex. 30(30분), 60(60분) | number |  |
 | taskList | 실제적으로 렌더링 될 정보를 나타냅니다. | Task[] |  |
 | timeTableSize | 타임테이블의 크기를 선택합니다. | string |  |
-| timetableType | 타입테이블의 타입을 선택합니다.(COLNM, ROW) | COLNM | ROW |  |
+| timetableDirection | 타입테이블의 타입을 선택합니다.(COLNM, ROW) | COLNM | ROW |  |
 | displayCurrentTime | 현재 시간을 나타냄 여부를 나타낸다. | boolean | false |
-| defaultValue | slot이 어떠한 이슈로 내부 content 작성이 어려울 경우 지정한 defaultValue로 렌더링 됩니다. | string | “” |
+| ellipsisText | slot이 어떠한 이슈로 내부 content 작성이 어려울 경우 지정한 ellipsisText로 렌더링 됩니다. | string | “” |
 | currentTimeLineStyle | 현재 시간을 나타내는 선의 스타일을 입힙니다. | css | {} |
 | popoverType | 생략된 task의 content를 어떻게 출력할 지 고른다. | 'CLICK', 'HOVER' | 'CLICK'  |
 | timeTableStyle | 전체 타임테이블의 스타일을 입힙니다. | css | { backgroundColor: 'white' } |
@@ -37,20 +37,19 @@ npm install ~~~
 
 
 ```tsx
-
         <Timetable // ROW
-          startTime={startTime}
-          endTime={endTime}
-          slotTime={slotTime}
-          taskList={taskList}
+          totalStartTime={startTime}
+          totalEndTime={endTime}
+          slotRange={slotTime}
+          taskList={taskListWithouttaskColor}
           timeTableSize="2000px"
-          timetableType="ROW"
+          timetableDirection="ROW"
           displayCurrentTime
           timeTableStyle={{ backgroundColor: 'white' }}
           timeSlotStyle={{ color: 'black' }}
           taskSlotStyle={{ color: 'black' }}
           popoverType="HOVER"
-          defaultValue="..."
+          ellipsisText="..."
           taskTheme="random"
         />
 
